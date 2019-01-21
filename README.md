@@ -1,4 +1,4 @@
-# Infrared Communication
+# Arduino: Infrared Communication
 
 ## Installing the library
 First, you'll need to grab [z3t0's IR Remote Library](https://github.com/z3t0/Arduino-IRremote/archive/master.zip). The easiest way to do this is to (in the Arduino DE) click Tools->Manage Libraries.
