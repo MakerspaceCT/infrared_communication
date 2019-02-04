@@ -5,10 +5,18 @@ First, you'll need to grab [z3t0's IR Remote Library](https://github.com/z3t0/Ar
 
 Search for "irremote" and install "IRremote by shirriff".
 
+## Circuit
+
+![infrared_rec_trans](infrared_rec_trans.png)
+
+## Circuit on Breadboard
+![infrared_rec_trans_w_bb](infrared_rec_trans_w_bb.png)
+
+## Code
 
 These first code samples are based on examples from that library's Github Repo (see link above).
 
-## Read a Remote
+### Read a Remote
 
 Read a raw numeric IR code from your remote.
 
@@ -21,9 +29,9 @@ void setup()
 {
   Serial.begin(9600);
   // So the user can watch the serial terminal to see what's going on.
-  Serial.println("Enabling IRin");
+  Serial.println("Enabling IR Reader");
   irrecv.enableIRIn(); // Start the receiver
-  Serial.println("Enabled IRin");
+  Serial.println("Enabled IR Reader");
 }
 void loop() {
   if (irrecv.decode(&results)) {
@@ -35,7 +43,7 @@ void loop() {
 }
 ```
 
-## Remote control an LED
+### Remote control an LED
 
 Use a specific pin code to control the LED on your Arduino Uno board.
 
@@ -76,7 +84,7 @@ void loop() {
 }
 ```
 
-## Send an IR code
+### Send an IR code
 
 ```
 /*
@@ -104,13 +112,13 @@ void loop() {
 	delay(5000); //5 second delay between each signal burst
 }
 ```
-## Transmit from one Arduino to another
+### Transmit from one Arduino to another
 
 Two sketches for this one. One for the transmitting Arduino board (sender) and one for the receiving Arduino board (recipient).
 
 These sketches are based on code from [this instructable](https://www.instructables.com/id/Cheap-wireless-transmission-between-two-Arduinos-w/) by Yoruk.
 
-### sender
+#### sender
 ```
 
 String message = "";
@@ -146,7 +154,7 @@ void loop() {
 
 }
 ```
-### Recipient
+#### reciever
 ```
 
 #include <IRremote.h>
@@ -177,6 +185,12 @@ void loop() {
 not yet.
 
 ## What's next?
-Terry Field wrote up some sample code for a more complex transmission method that includes a method for message checksums. It takes more to get set up, but you can check it out [here](http://www.terryjfield.com/?p=139).
+* Terry Field wrote up some sample code for a more complex transmission method that includes a method for message checksums. It takes more to get set up, but you can check it out [here](http://www.terryjfield.com/?p=139).
 
-Check out Sparkfun's [Getting Started with IR](https://learn.sparkfun.com/tutorials/ir-communication/all) page.
+* Check out Sparkfun's [Getting Started with IR](https://learn.sparkfun.com/tutorials/ir-communication/all) page.
+
+* What appliances do you have at home that use infrared remotes? I control my air conditioner with an ESP8266 (wifi-enabled Arduino-compatible board).
+
+* What remotes do you have that don't use infrared light? What do they use instead?
+   * The original Amazon FireTV Stick remote used WiFi-direct, and the new one uses Bluetooth, neither of which depend on line-of-sight  communication.
+   * Some devices use remotes that emit sound inaudible to human ears. This presents different opportunities and different challenges.
