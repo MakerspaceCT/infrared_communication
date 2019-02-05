@@ -181,8 +181,8 @@ void loop() {
 ```
 
 
-## Notes
-not yet.
+## Parts
+* [Infrared Receiver](https://www.banggood.com/10pcs-Universal-IR-Infrared-Receiver-Head-With-Iron-Shell-TL1838-VS1838B-1838-38Khz-p-1211280.html?rmmds=search&cur_warehouse=CN)
 
 ## What's next?
 * Terry Field wrote up some sample code for a more complex transmission method that includes a method for message checksums. It takes more to get set up, but you can check it out [here](http://www.terryjfield.com/?p=139).
